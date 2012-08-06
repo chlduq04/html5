@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="foundation3/stylesheets/app.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/foundation.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/ie.css" type="text/css" />
+    </head>
+    <script type="text/javascript">
+        function initialize(){
+            showInContentWindow('<button id="name_enter" type="submit" class="small button" onclick="nameError()">enter >></button>', 'name_error_button');
+            showInContentWindow('<button id="address_enter" type="submit" class="small button" onclick="addressError()">enter >></button>', 'address_error_button');
+            showInContentWindow('<button id="phone_enter" type="submit" class="small button" onclick="phoneError()">enter >></button>', 'phone_error_button');
+        };
+        
+        function showInContentWindow(text, id){
+            var sidediv = document.getElementById(id);
+            sidediv.innerHTML = text;
+        };
+        
+        function nameError(){
+            var arge0 = document.getElementById("name_field").value;
+            if (arge0 == "") {
+                showInContentWindow('<div id="name_result" class="alert-box alert">empty or incorrect</div>', 'name_result');
+                showInContentWindow('<button class="small alert button" onclick="nameError()">error >></button>', 'name_error_button');
+            }
+            else {
+                showInContentWindow('<div id="name_result" class="alert-box success">' + arge0 + '</div>', 'name_result');
+                showInContentWindow('<button class="small success button" onclick="nameError()">success</button>', 'name_error_button');
+            };
+            
+            };
+        
+        function addressError(){
+        
+            var arge0 = document.getElementById("street_field").value;
+            var arge1 = document.getElementById("city_field").value;
+            var arge2 = document.getElementById("zip_field").value;
+            var arge3 = document.getElementById("state_field").value;
+            if (arge0 == "" || arge1 == "" || arge2 == "" || arge3 == "") {
+                showInContentWindow('<div id="address_result" class="alert-box alert">empty or incorrect</div>', 'address_result');
+                showInContentWindow('<button class="small alert button" onclick="addressError()">error >></button>', 'address_error_button');
+            }
+            else {
+                showInContentWindow('<div id="address_result" class="alert-box success">' + arge0 + arge1 + arge2 + arge3 + '</div>', 'address_result');
+                showInContentWindow('<button class="small success button" onclick="addressError()">success</button>', 'address_error_button');
+            };
+            
+            };
+        
+        function phoneError(){
+            var arge0 = document.getElementById("phone1").value;
+            var arge1 = document.getElementById("phone2").value;
+            var arge2 = document.getElementById("phone3").value;
+            
+            if (arge0 == "" || arge1 == "" || arge2 == "") {
+                showInContentWindow('<div id="phone_result" class="alert-box alert">empty or incorrect</div>', 'phone_result');
+                showInContentWindow('<button class="small alert button" onclick="phoneError()">error >></button>', 'phone_error_button');
+            }
+            else {
+                showInContentWindow('<div id="phone_result" class="alert-box success">' + arge0 + arge1 + arge2 + '</div>', 'phone_result');
+                showInContentWindow('<button class="small success button" onclick="phoneError()">success</button>', 'phone_error_button');
+            };
+            };
+    </script>
+    <body onload="initialize()">
+        <div class="row display" style="height:30px">
+        </div>
+        <div class="row display" style="height:50">
+            <div class="four columns">
+                left..
+            </div>
+            <div class="four columns">
+                <fieldset>
+                    <legend style="text-align:center;">
+                        [ MAIN INFO ]
+                    </legend>
+                    <p>
+                    </p>
+                    <form>
+                    <label>
+                        YOUR NAME
+                    </label>
+                    <input id="name_field" type="text" placeholder="Standard Input" />
+                    <p>
+                        <div class="row">
+                            <div id="name_error_button" class="four columns">
+                            </div>
+                            <div id="name_error" class="eight columns">
+                                <div id="name_result">
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                    <label>
+                        ADDRESS
+                    </label>
+                    <input id="street_field" type="text" class="twelve" placeholder="Street" />
+                    <div class="row">
+                        <div  class="six columns">
+                            <input id="city_field" type="text" placeholder="City" />
+                        </div>
+                        <div class="three columns">
+                            <input id="state_field" type="text" placeholder="State" />
+                        </div>
+                        <div class="three columns">
+                            <input id="zip_field" type="text" placeholder="ZIP" />
+                        </div>
+                    </div>
+                    <p>
+                        <div class="row">
+                            <div id="address_error_button" class="four columns">
+                            </div>
+                            <div id="address_error" class="eight columns">
+                                <div id="address_result">
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                    <label>
+                        PHONE
+                    </label>
+                    <div class="row">
+                        <div class="two columns">
+                            <input id="phone1" type="text" placeholder="PHONE1" />
+                        </div>
+                        <div class="five columns">
+                            <input id="phone2" type="text" placeholder="PHONE2" />
+                        </div>
+                        <div class="five columns">
+                            <input id="phone3" type="text" placeholder="PHONE3" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="phone_error_button" class="four columns">
+                        </div>
+                        <div id="phone_error" class="eight columns">
+                            <div id="phone_result">
+                            </div>
+                        </div>
+                    </div>
+                    </p>
+                </form>
+                <p>
+                </p>
+                </fieldset>
+            </div>
+            <div class="four columns">
+                right..
+            </div>
+        </div>
+    </body>
+</html>

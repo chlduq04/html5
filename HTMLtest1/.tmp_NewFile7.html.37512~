@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="foundation3/stylesheets/app.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/foundation.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/ie.css" type="text/css" />
+    </head>
+    <script type="text/javascript">
+                var htmlvalue;
+                function initialize(){
+                };
+                
+                function showInContentWindow(text, id){
+                    var sidediv = document.getElementById(id);
+                    sidediv.innerHTML = text;
+                };
+                
+                function argeError(){
+                
+                    var arge = document.getElementById("name_error");
+                    if (arge.value == "") {
+                        //				document.getElementById("");
+                    };
+                    };
+                
+                function addressError(){
+                
+                    var arge0 = document.getElementById("street_field");
+                    var arge1 = document.getElementById("city_field");
+                    var arge2 = document.getElementById("zip_field");
+                    var arge3 = document.getElementById("state_field");
+                    /*
+                     if (arge0==""|| arge1 == ""||arge2 == ""||arge3== ""){
+                     document.getElementById("address_enter").innerHTML = '<button class="small alert button">error >></button>';
+                     //	document.getElementById("");
+                     };
+                     */
+					      showInContentWindow('<div class="alert-box alert"> empty or incorrect <a href="" class="close">x</a></div>', 'address_error');
+                 		  showInContentWindow('<button class="small alert button">error >></button>', 'address_error_button');
+/*
+                     if (arge0 == "" || arge1 == "" || arge2 == "" || arge3 == "") {
+                     }
+                     else {
+                     */
+                };
+                
+                function phoneError(){
+                    /*            
+                     * 
+                     */
+					var arge = document.getElementById("phone_error");
+                     if (arge.value == "") {
+                     arge.innerHTML = "error";
+                     };
+                    showInContentWindow('<div class="alert-box alert"> empty or incorrect <a href="" class="close">x</a></div>', 'phone_error');
+                    showInContentWindow('<button class="small alert button">error >></button>', 'phone_error_button');
+                };
+            
+    </script>
+    <body onload="initialize()">
+        <div class="row display" style="height:30px">
+        </div>
+        <div class="row display" style="height:50">
+            <div class="four columns">
+                left..
+            </div>
+            <div class="four columns">
+                <fieldset>
+                    <legend style="text-align:center;">
+                        [ MAIN INFO ]
+                    </legend>
+                    <p>
+                    </p>
+                    <form>
+                        <label>
+                            YOUR NAME
+                        </label>
+                        <input type="text" placeholder="Standard Input" />
+                        <div id="name_error">
+                        </div>
+                        <p>
+                        </p>
+                        <label>
+                            ADDRESS
+                        </label>
+                        <input id="street_field" type="text" class="twelve" placeholder="Street" />
+                        <div class="row">
+                            <div id="city_field" class="six columns">
+                                <input type="text" placeholder="City" />
+                            </div>
+                            <div id="state_field" class="three columns">
+                                <input type="text" placeholder="State" />
+                            </div>
+                            <div id="zip_field" class="three columns">
+                                <input type="text" placeholder="ZIP" />
+                            </div>
+                        </div>
+                        <p>
+                            <div class="row">
+                                <div id="address_error_button" class="four columns">
+                                    <button id="address_enter" class="small button" onclick='addressError()'>
+                                        enter >>
+                                    </button>
+                                </div>
+                                <span id="address_error" class="eight columns"></span>
+                            </div>
+                        </p>
+                        <label>
+                            PHONE
+                        </label>
+                        <div class="row">
+                            <div class="two columns">
+                                <input type="text" placeholder="PHONE" />
+                            </div>
+                            <div class="five columns">
+                                <input type="text" placeholder="PHONE" />
+                            </div>
+                            <div class="five columns">
+                                <input type="text" placeholder="PHONE" />
+                            </div>
+                        </div>
+                        <p>
+                            <div class="row">
+                                <div id="phone_error_button" class="four columns">
+                                    <button id="phone_enter" class="small button" onclick="phoneError()">
+                                        enter >>
+                                    </button>
+                                </div>
+                                <div id="phone_error" class="eight columns">
+                                </div>
+                            </div>
+                        </p>
+                    </form>
+                    <p>
+                    </p>
+                </fieldset>
+            </div>
+            <div class="four columns">
+                right..
+            </div>
+        </div>
+    </body>
+</html>

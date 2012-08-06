@@ -1,0 +1,212 @@
+{%extends "OpenglPage.html"%}
+
+{%block opengl_initfun()%}
+	indexMake(1,pagenum);
+{%endblock%}
+
+{%block opengl_function%}
+    	var {%block pagenum%}pagenum={{pagenum}}{%endblock%};
+		var limitidx = 4;
+		
+		function indexMake(s_i,e_i){
+			var s_text = '<ul class="pagination"><li class="arrow"><a href="" onclick="indexMake()">&laquo;</a></li>';					                
+			var m_text = "";
+			var e_text = '</li><li class="arrow"><a href="" onclick="indexMake()">&raquo;</a></li></ul>';
+			showInContentWindow(text,'listView');
+			for(x=s_i;x<e_i+1;x++)
+			{
+				m_text+='<li><a href="http://127.0.0.1:8001/main/opengl/'+x+'/" onclick="indexMake()">'+x+'</a>';
+			};
+			var text = s_text+m_text+e_text;
+			showInContentWindow(text,'listView');
+		};		
+		function showdetail(title,text,comment){
+			var detail =
+						'<br>'
+						+'</br>'
+						+'<div class="panel" style="height:50px; font-size:20px;">'
+                   			+title
+                		+'</div>'
+                			+'<br>'
+                			+'</br>'
+                		+'<div class="panel" style="height:500px">'
+                    		+text
+                		+'</div>'
+                			+'<br>'
+                			+'</br>'
+                		+'<div align="right">'
+                    		+'<button class="small button">'
+                        		+'comment'
+                    		+'</button>'
+                		+'</div>'
+                		+'<br>'
+                		+'</br>'
+                		+'<div class="panel" style="height:auto;">'
+                    		+comment
+                		+'</div>'
+			showInContentWindow(detail,'readView');			
+		};
+		function nameError(){
+			var arge0 = $("#" + 'name_field').val();
+            //var arge0 = document.getElementById("name_field").value;
+            if (arge0 == "") {
+                showInContentWindow('<div id="name_result" class="alert-box alert">empty or incorrect</div>', 'name_result');
+                showInContentWindow('<button class="small alert button" onclick="nameError()">error</button>', 'name_error_button');
+            }
+            else {
+                showInContentWindow('<div id="name_result" class="alert-box success">' + arge0 + '</div>', 'name_result');
+                showInContentWindow('<button class="small success button" onclick="nameError()">success</button>', 'name_error_button');
+            };
+		};
+        
+        function addressError(){
+        	var arge0 = $("#" + 'content_field').val();
+            //var arge0 = document.getElementById("content_field").value;
+            if (arge0 == "") {
+                showInContentWindow('<div id="address_result" class="alert-box alert">empty or incorrect</div>', 'address_result');
+                showInContentWindow('<button class="small alert button" onclick="addressError()">error</button>', 'address_error_button');
+            }
+            else {
+                showInContentWindow('<div id="address_result" class="alert-box success">' + 'Thanks' + '</div>', 'address_result');
+                showInContentWindow('<button class="small success button" onclick="addressError()">success</button>', 'address_error_button');
+            };
+		};
+        
+        function phoneError(){
+           	//var arge0 = document.getElementById("phone1").value;
+            //var arge1 = document.getElementById("phone2").value;
+            //var arge2 = document.getElementById("phone3").value;
+            var arge0 = $("#" + 'phone1').val();
+			var arge1 = $("#" + 'phone2').val();
+			var arge2 = $("#" + 'phone3').val();
+            if (arge0 == "" || arge1 == "" || arge2 == "") {
+                showInContentWindow('<div id="phone_result" class="alert-box alert">empty or incorrect</div>', 'phone_result');
+                showInContentWindow('<button class="small alert button" onclick="phoneError()">error</button>', 'phone_error_button');
+            }
+            else {
+                showInContentWindow('<div id="phone_result" class="alert-box success">' + arge0+" - " + arge1+" - " + arge2 + '</div>', 'phone_result');
+                showInContentWindow('<button class="small success button" onclick="phoneError()">success</button>', 'phone_error_button');
+            };
+		};
+		function m_write(){
+	
+			var text = ''
+			+'<div class="row display" style="height:50;text-align:left;">'
+            +'<div class="one columns">'
+                
+            +'</div>'
+            +'<div class="ten columns">'
+                +'<fieldset>'
+                    +'<legend style="text-align:center;">'
+                        +'[ NEW ]'
+                    +'</legend>'
+                    +'<p>'
+                    +'</p>'
+                    +'<form>'
+                    +'<div class="row">'
+                        +'<div class="four columns">'
+                            +'<label>'
+                                +'Title'
+                            +'</label>'
+                            +'<input id="name_field" type="text" placeholder="Standard Input">'
+                            +'</input>'
+                            +'<p>'
+                                +'<div class="row">'
+                                    +'<div id="name_error_button" class="four columns">'
+                                    +'</div>'
+                                    +'<div id="name_error" class="eight columns">'
+                                        +'<div id="name_result">'
+                                        +'</div>'
+                                    +'</div>'
+                                +'</div>'
+                            +'</p>'
+                        +'</div>'
+                        +'<div class="four columns">'
+                        +'</div>'
+                    +'</div>'
+                    +'<label>'
+                        +'Content'
+                    +'</label>'
+                    +'<textarea id="content_field" type="text" class="twelve" placeholder="Detail" style="height:400px">'+'</textarea>'
+                    +'<p>'
+                        +'<div class="row">'
+                            +'<div id="address_error_button" class="four columns">'
+                            +'</div>'
+                            +'<div id="address_error" class="eight columns">'
+                                +'<div id="address_result">'
+                                +'</div>'
+                            +'</div>'
+                        +'</div>'
+                    +'</p>'
+                    +'<label>'
+                        +'Phone'
+                    +'</label>'
+                    +'<div class="row">'
+                        +'<div class="two columns">'
+                            +'<input id="phone1" type="text" placeholder="PHONE1" />'
+                        +'</div>'
+                        +'<div class="five columns">'
+                            +'<input id="phone2" type="text" placeholder="PHONE2" />'
+                        +'</div>'
+                        +'<div class="five columns">'
+                            +'<input id="phone3" type="text" placeholder="PHONE3" />'
+                        +'</div>'
+                    +'</div>'
+                    +'<div class="row">'
+                        +'<div id="phone_error_button" class="four columns">'
+                        +'</div>'
+                        +'<div id="phone_error" class="eight columns">'
+                            +'<div id="phone_result">'
+                            +'</div>'
+                        +'</div>'
+                    +'</div>'
+                    +'</p>'
+                +'</form>'
+                +'<p>'
+                +'</p>'
+                +'</fieldset>'
+            +'</div>'
+            +'<div class="one columns">'
+               
+            +'</div>'
+        +'</div>'
+        showInContentWindow(text, 'readView');
+		showInContentWindow('<button id="name_enter" type="submit" class="small button" onclick="nameError()">enter</button>', 'name_error_button');
+		showInContentWindow('<button id="address_enter" type="submit" class="small button" onclick="addressError()">enter</button>', 'address_error_button');
+		showInContentWindow('<button id="phone_enter" type="submit" class="small button" onclick="phoneError()">enter</button>', 'phone_error_button');
+
+		};
+{%endblock%}
+
+{%block opengl_html%}
+        <div style="margin:20px;size:auto">
+            <div class="twelve columns" style="height:auto;">
+				<div class="ten columns" style="text-align:left">
+				</div>
+				<div class="two columns" style="text-align:right;">
+					<button id="name_enter" type="submit" class="small button" onclick="m_write()">NEW</button>					
+				</div>
+                <div class=" eight columns " style="height:10px;text-align:center;">
+                    Title
+                </div>
+                <div class="four columns " style="height:10px;text-align:center">
+                    Time
+                </div>
+                <hr>{%for item in entries%}
+                <div class="eight columns " style="height:10px;text-align:left">
+                    <a href="#" onclick="showdetail('{{item.Title}}','{{item.Content}}','{{item.Comment}}')">{{item.Title}}</a>
+                </div>
+                <div class="four columns" style="height:10px;">
+                    {{item.Created}}
+                    {{item.Category}}
+                </div>
+                <hr>{%endfor%}
+                <div id="listView">
+                </div>
+                <hr>
+                <div id="readView">
+                </div>
+            <div>
+            </div>
+        </div>
+{%endblock%}

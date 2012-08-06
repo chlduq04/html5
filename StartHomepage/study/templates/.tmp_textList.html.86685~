@@ -1,0 +1,67 @@
+{%extends "Base.html"%}
+
+{%block Basetitle%}
+test
+{%endblock%}
+
+{%block Basefunction%}
+    	var {%block pagenum%}pagenum={{pagenum}}{%endblock%};
+		var limitidx = 4;
+		function initialize()
+		{
+			indexMake(1,pagenum);
+		}
+        function showInContentWindow(text, id){
+            $("#" + id).html(text);
+        };
+		function indexMake(s_i,e_i){
+			var s_text = '<ul class="pagination"><li class="arrow"><a href="" onclick="indexMake()">&laquo;</a></li>';					                
+			var m_text = "";
+			var e_text = '</li><li class="arrow"><a href="" onclick="indexMake()">&raquo;</a></li></ul>';
+			showInContentWindow(text,'listView');
+			for(x=s_i;x<e_i+1;x++)
+			{
+				m_text+='<li><a href="http://127.0.0.1:8001/blog/page/'+x+'/" onclick="indexMake()">'+x+'</a>';
+			};
+			var text = s_text+m_text+e_text;
+			
+			showInContentWindow(text,'listView');
+			showInContentWindow(text,'listView');
+		};		
+		function showlist(){
+			
+		};
+{%endblock%}
+{%block Basehtml%}    
+<body onload="initialize()">
+        <div class="row" style="margin:20px;size:auto">
+            <div class="two columns ">
+            </div>
+            <div class="eight columns panel" style="height:auto;">
+                <div class=" eight columns " style="height:10px;text-align:center;">
+                    Title
+                </div>
+                <div class="four columns " style="height:10px;text-align:center">
+                    Time
+                </div>
+                <hr>{%for item in entries%}
+                <div class="eight columns " style="height:10px;">
+                    <a href="http://127.0.0.1:8001/blog/entry/{{item.id}}/">{{item.Title}}</a>
+                </div>
+                <div class="four columns " style="height:10px;">
+                    {{item.Created}}
+                    {{item.Category}}
+                </div>
+                <hr>{%endfor%}
+                <div id="listView">
+                	
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+		</body>
+{%endblock%}
+
+
+

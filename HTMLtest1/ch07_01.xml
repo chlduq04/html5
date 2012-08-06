@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="euc-kr" standalone="yes"?>
+<MEETINGS>
+ <MEETING TYPE="informal">
+  <MEETING_TITLE>XML 세계에 오신것을 환영합니다.</MEETING_TITLE>
+  <MEETING_NUMBER>2079</MEETING_NUMBER>
+  <SUBJECT>XML</SUBJECT>
+  <DATE>08/02/2006</DATE>
+  <PEOPLE>
+   <PERSON ATTENDANCE="presend">
+    <FIRST_NAME>민</FIRST_NAME>
+    <LAST_NAME>슬기</LAST_NAME>
+   </PERSON>
+   
+   <PERSON ATTENDANCE="absent">
+    <FIRST_NAME>오</FIRST_NAME>
+    <LAST_NAME>지명</LAST_NAME>
+   </PERSON>
+   
+   <PERSON>
+    <FIRST_NAME>이</FIRST_NAME>
+    <LAST_NAME>소룡</LAST_NAME>
+   </PERSON>
+  </PEOPLE>
+ </MEETING>
+</MEETINGS>

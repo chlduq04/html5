@@ -1,0 +1,40 @@
+<ol><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Create HomePage</title>
+<script>
+	function Array(num){
+		this.length = num;
+		for(var i = 0;i<=length;i++){
+			this[i] = 0;
+		}
+		return this;
+	};
+</script>
+<script type = "text/javascript" src ="http://ajax.googleleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type = "text/javascript" src ="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type = "text/javascript">
+	$(document).ready(function()){
+		var latlng = new google.maps.LatLan(37.5640,126.9751);
+		var myOption = {
+			zoom = 12, center : latlng, mapTypeId
+		}
+	}
+
+	
+</script>
+</head>
+<body>
+	<h1>한번 만들어 볼까</h1>
+	<h2>한번 만들어 볼까</h2>
+	<h3>한번 만들어 볼까</h3>
+	naver<p>
+	<a href = "http://naver.com">this is naver link<p></a>	
+	<a href = "http//daum.net">this is daum link<p></a>
+	<img src="http://www.w3schools.com/html/w3schools.jpg"/>
+<script>
+	a = new Array(3);
+</script>
+</body>
+</html></ol>

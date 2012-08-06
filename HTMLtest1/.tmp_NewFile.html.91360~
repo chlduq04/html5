@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function addfun(arg1, arg2){
+		return arg1 + arg2;
+	};
+	var empty = {};
+	function myfun(arg1,arg2){
+		this.arg1 = arg1;
+		this.arg2 = arg2;
+		this.myprint = myprint;
+	};
+	function myprint(){
+		document.write(this.arg1);
+	}
+	var index = {};
+	
+</script>
+</head>
+<body>
+	<script>
+	start = new myfun(6,6);
+	document.write(addfun(1,2)+"<p>");
+	document.write(start["arg1"]+"<p>");
+	start.arg1 = 2;
+	start.myprint();
+	</script>
+</body>
+</html>

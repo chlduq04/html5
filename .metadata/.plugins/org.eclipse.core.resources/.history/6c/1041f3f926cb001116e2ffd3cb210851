@@ -1,0 +1,18 @@
+# Create your views here.
+from django.http import HttpResponse
+
+def main_page(request):
+    output='''
+    output = 
+    < html > 
+    < head >< title >% s </ title ></ head > 
+    <body>
+    <h1>%s<h1><p>%s</p> 
+    </body> 
+    </ html > 
+'''%(
+      '이렇게',
+      '한다는데',
+      '이게맞나?'
+     )
+return HttpResponse(output)    

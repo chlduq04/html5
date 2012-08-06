@@ -1,0 +1,13 @@
+<h1>{{page_title}}</h1>
+
+<form method="post" action="/blog/add/post/">
+	<p><label>TITLE</label><input type="text" id="title" name="title" value="" /></p>
+	
+	<p><label>CATEGORY</label><select name="category" id="category">
+	{% for category in categories %}</p>
+	<option value="{{category.id}}">{{category.Title}}</option>
+	<p>{% endfor %}</select></p>
+	
+	<p><textarea id="content" name="content"></textarea></p>
+	<p><input type="submit" value="INPUT" /></p>
+</form>

@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+        <title>xml 파싱 연습</title>
+        <script src="http://code.jquery.com/jquery-latest.js">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //ajax 로 데이터 겟
+                $.ajax({
+                    url: "http://blog.rss.naver.com/swanfe.xml",
+                    type: "GET",
+                    cashe: false,
+                    success: function(transport){
+                        var bookTags = transport.getElementsByTagName('item');
+                        
+                        //테이블에 할당(tr/ td 생성)
+                        for (var b = 0; b < bookTags.length; b++) {
+                            var category = bookTags[b].getElementsByTagName('category')[0].firstChild.nodeValue;
+                            var title = bookTags[b].getElementsByTagName('title')[0].firstChild.nodeValue;
+                            var description = bookTags[b].getElementsByTagName('description')[0].firstChild.nodeValue;
+                            var elTR = document.getElementById("table_rss").insertRow(-1);
+                            var elTD1 = elTR.insertCell(-1);
+                            elTD1.innerHTML = title;
+                            var elTD2 = elTR.insertCell(-1);
+                            elTD2.innerHTML = category;
+                            var elTD3 = elTR.insertCell(-1);
+                            elTD3.innerHTML = description;
+                        }
+                    }
+                });
+            });
+        </script>
+        <style type="text/css">
+            body {
+                margin-top: 0;
+                margin-left: 0;
+            }
+            
+            div {
+                width: 778px;
+                font-size: 12px;
+                font-family: Verdana;
+                color: #000;
+                background-color: #d9d9d9;
+                border: 1px solid #d9d9d9;
+                padding: 10px 10px 10px 10px;
+                font-weight: bold;
+                text-align: center;
+            }
+            
+            table {
+                border: 1px solid #ccc;
+                width: 800px;
+                font-size: 11px;
+                font-family: Verdana;
+                color: #000;
+            }
+            
+            td {
+                padding: 5px 5px 5px 5px;
+                border-bottom: 1px solid #ccc;
+                text-align: center;
+            }
+            
+            th {
+                background-color: #d9d9d9;
+                padding: 5px 5px 5px 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            ## xml 파싱 연습 ##
+        </div>
+        <table id="table_rss">
+            <tr>
+                <colgroup>
+                    <col width="55"><col width="55"><col width="690">
+                </colgroup>
+            </tr>
+            <tr>
+                <th>
+                    제목
+                </th>
+                <th>
+                    카테고리
+                </th>
+                <th>
+                    내용
+                </th>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function print(arge1,arge2,arge3){
+	this.first = arge1;
+	this.second = arge2;
+	this.third = arge3;
+};
+</script>
+</head>
+<body>
+<script>
+	a = new print(1,2,3);
+	document.write(a.first);
+
+</script>
+</body>
+</html>

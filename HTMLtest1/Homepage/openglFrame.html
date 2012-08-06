@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="foundation3/stylesheets/app.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/foundation.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/ie.css" type="text/css" />
+        <script src="jquery.js">
+        </script>
+        <script>
+            
+            function initialize(){
+                var description = '<div class="panel"><h5>This is a regular panel.</h5><p>It has an easy to override visual style, and is appropriately subdued.</p></div><br><br>' +
+                '<div class="panel"><h5>This is a regular panel.</h5><p>It has an easy to override visual style, and is appropriately subdued.</p></div><br><br>';
+                showInContentWindow(description, 'main_field')
+            }
+            
+            function showInContentWindow(text, id){
+                $("#"+id).html(text);
+            };
+        </script>
+    </head>
+    <body onload="initialize()">
+        <div class="row" style="margin:10px">
+            <div id="left_frame" class="two columns">
+                <section id="sidebar" role="complementary">
+                    <dl class="tabs vertical hide-on-phones">
+                        <dd class="active">
+                            <a href="file://C:/Users/choi/HTML5_eclipse/HTMLtest1/Homepage/openglFrame.html">OpenGl</a>
+                        </dd>
+                        <dd>
+                            <a href="file://C:/Users/choi/HTML5_eclipse/HTMLtest1/Homepage/htmlFrame.html">HTML</a>
+                        </dd>
+                        <dd>
+                            <a href="file://C:/Users/choi/HTML5_eclipse/HTMLtest1/Homepage/directxFrame.html">DirectX</a>
+                        </dd>
+                        <dd>
+                            <a href="file://C:/Users/choi/HTML5_eclipse/HTMLtest1/Homepage/DjangoFrame.html">Django</a>
+                        </dd>
+                        <!--
+                        <dd>
+                        <a href="file://C:/Users/choi/HTML5_eclipse/HTMLtest1/Homepage/OpenCVFrame.html">OpenCV</a>
+                        </dd>
+                        <dd>
+                        <a href="file://C:/Users/choi/HTML5_eclipse/HTMLtest1/Homepage/SeleniumFrame.html">Selenium</a>
+                        </dd>
+                        -->
+                    </dl>
+                </section>
+            </div>
+            <div id="main_field" class="ten columns">
+            </div>
+        </div>
+        <script src="./foundation3/javascripts/jquery.js">
+        </script>
+    </body>
+</html>

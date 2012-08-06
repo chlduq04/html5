@@ -1,0 +1,108 @@
+{%extends "MainFrame.html"%}
+
+{%block mainF_function%}
+
+{%endblock%}
+
+{%block mainF_Main()%}
+		'<div class="row display" style="margin:10px">'
+        +'<div id="left_frame" class="two columns" style="height:100px">'
+               +'<section id="sidebar" role="complementary">'
+                    +'<dl class="tabs vertical hide-on-phones">'
+                        +'<dd class="active">'
+                            +'<a href="">Info</a>'
+                       +'</dd>'
+                    +'</dl>'
+                +'</section>'
+            +'</div>'
+            +'<div id="main_field" class="ten columns">'
+            +'</div>'
+            +'<div class="two columns">'
+            +'</div>'
+        +'</div>'
+{%endblock%}
+
+{%block mainF_Programming()%}
+'<div class="row display" style="margin:10px">'
+            +'<div id="left_frame" class="two columns">'
+                +'<section id="sidebar" role="complementary">'
+                    +'<dl class="tabs vertical hide-on-phones">'
+                        +'<dd><a href="">OpenGl</a></dd>'
+                        +'<dd><a href="">HTML</a></dd>'
+                        +'<dd><a href="">DirectX</a></dd>'
+                        +'<dd><a href="">Django</a></dd>'
+                    +'</dl>'
+                +'</section>'
+            +'</div>'
+			+'<div id="right_frame" class="ten columns">'
+            +'</div>'
+        +'</div>'
+{%endblock%}
+
+{%block mainF_opengl()%}
+		'<div class="row" style="margin:10px">'
+            +'<div id="left_frame" class="two columns">'
+               +'<section id="sidebar" role="complementary">'
+                    +'<dl class="tabs vertical hide-on-phones">'
+                        +'<dd class="active"><a href="">OpenGl</a></dd>'
+                        +'<dd><a href="">HTML</a></dd>'
+                        +'<dd><a href="">DirectX</a></dd>'
+                        +'<dd><a href="">Django</a></dd>'
+                    +'</dl>'
+                +'</section>'
+            +'</div>'
+            +'<div id="main_field" class="ten columns">'
+            +'</div>'
+        +'</div>'
+{%endblock%}
+
+{%block mainF_html%}
+        '<div class="row"style="margin:10px">'
+            +'<div id="left_frame" class="two columns">'
+                +'<section id="sidebar" role="complementary">'
+                    +'<dl class="tabs vertical hide-on-phones">'
+                        +'<dd><a href="">OpenGl</a></dd>'
+                        +'<dd class="active"><a href="">HTML</a></dd>'
+                        +'<dd><a href="">DirectX</a></dd>'
+                        +'<dd><a href="">Django</a></dd>'
+                    +'</dl>'
+                +'</section>'
+            +'</div>'
+            +'<div id="right_frame" class="ten columns">'
+            +'</div>'
+        +'</div>'
+{%endblock%}
+
+{%block mainF_directx%}
+        '<div class="row"style="margin:10px">'
+            +'<div id="left_frame" class="two columns">'
+                +'<section id="sidebar" role="complementary">'
+                +'<dl class="tabs vertical hide-on-phones">'
+                    +'<dd><a href="">OpenGl</a></dd>'
+                    +'<dd><a href="">HTML</a></dd>'
+                    +'<dd class="active"><a href="">DirectX</a></dd>'
+                    +'<dd><a href="">Djanggo</a></dd>'
+                +'</dl>'
+            +'</section>'
+        +'</div>'
+		+'<div id="right_frame" class="ten columns">'
+            +'</div>'
+        +'</div>'
+{%endblock%}
+
+{%block mainF_Django%}
+        '<div class="row" style="margin:10px">'
+            +'<div id="left_frame" class="two columns">'
+                +'<section id="sidebar" role="complementary">'
+                    +'<dl class="tabs vertical hide-on-phones">'
+                        +'<dd><a href="">OpenGl</a></dd>'
+                        +'<dd><a href="">HTML</a></dd>'
+                        +'<dd><a href="">DirectX</a></dd>'
+                        +'<dd class="active"><a href="">Django</a></dd>'
+                    +'</dl>'
+                +'</section>'
+            +'</div>'
+            +'<div id="right_frame" class="ten columns">'
+            +'</div>'
+        +'</div>'
+{%endblock%}

@@ -1,0 +1,39 @@
+{%extends "MainFrame.html"%}
+
+{%block mainF_function%}
+	{%block opengl_function%}
+	{%endblock%}
+{%endblock%}
+
+{%block mainF_initfun()%}
+	{%block opengl_initfun()%}
+	{%endblock%}
+{%endblock%}
+
+{%block  mainF_html%}
+<div class="row display" style="margin:10px">
+    <div id="left_frame" class="two columns">
+        <section id="sidebar" role="complementary">
+            <dl class="tabs vertical hide-on-phones">
+                <dd class="active">
+                    <a href="http://127.0.0.1:8001/main/opengl/">OpenGl</a>
+                </dd>
+                <dd>
+                    <a href="">HTML</a>
+                </dd>
+                <dd>
+                    <a href="">DirectX</a>
+                </dd>
+                <dd>
+                    <a href="">Django</a>
+                </dd>
+            </dl>
+        </section>
+    </div>
+    <div id="main_field" class="ten columns">
+        <div style="height:auto">
+        	{%block opengl_html%}{%endblock%}
+        </div>
+    </div>
+</div>
+{%endblock%}

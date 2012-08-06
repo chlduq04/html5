@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>으으</title>
+<script>
+	function End(){
+		document.write(this.Start.name);
+		document.write(this.Start.age);
+		document.write(this.Start.money);
+		document.write(this.company);
+		document.write(this.number);
+	}
+	function Start(name,age,money){
+		this.name = name;
+		this.age = age;
+		this.money = money;
+	}
+	function Print(company,number,Start){
+		this.company = company;
+		this.number = number;
+		this.Start = Start;
+		this.End = End;
+	}
+
+</script>
+</head>
+<body>
+<script>
+	a1 = new Start("최웅엽",24,20000);
+	b1 = new Start("박성수",25,30000);
+	pA = new Print("모비틀",20,al);
+	pB = new Print("모비틀",20,b1);
+	document.write("왜 안돼는 거지?");
+	pA.End();
+</script>
+</body>
+</html>

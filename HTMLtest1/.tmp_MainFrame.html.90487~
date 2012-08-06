@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="foundation3/stylesheets/app.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/foundation.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/ie.css" type="text/css" />
+        <script src="jquery.js">
+        </script>
+    </head>
+    <script>
+        function initialize(){
+        };
+    </script>
+    <body>
+        <div class="row" align="center">
+            <div class="row" style="height:150px">
+               <div style="height:60%">
+                </div>
+                <div style="height:40%">
+                    <ul class="nav-bar">
+                        <li class="active">
+                            <a href="#">Main</a>
+                        </li>
+                        <li class="has-flyout two columns">
+                            <a href="#">Study</a>
+                            <a href="#" class="flyout-toggle"><span></span></a>
+                            <ul class="flyout">
+                                <li>
+                                    <a href="#">Sub Nav 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sub Nav 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sub Nav 3</a>
+                                </li>
+                            </ul>
+                        </li>
+						<li class="has-flyout two columns">
+                            <a href="#">Board</a>
+                            <a href="#" class="flyout-toggle"><span></span></a>
+                            <ul class="flyout">
+                                <li>
+                                    <a href="#">Sub Nav 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sub Nav 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sub Nav 3</a>
+                                </li>
+                            </ul>
+                        </li>
+						<li class="has-flyout two columns">
+                            <a href="#">Site</a>
+                            <a href="#" class="flyout-toggle"><span></span></a>
+                            <ul class="flyout">
+                                <li>
+                                    <a href="#">Sub Nav 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sub Nav 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sub Nav 3</a>
+                                </li>
+                            </ul>
+                        </li>
+						<li class="has-flyout two columns">
+                            <a href="#">Help</a>
+                            <a href="#" class="flyout-toggle"><span></span></a>
+                            <ul class="flyout">
+                                <li>
+                                    <a href="#">Sub Nav 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sub Nav 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sub Nav 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" style="height:500px">
+                <!--가운데-->
+                <div class="four columns">
+                </div>
+                <div class="eight columns">
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="height:50px">
+                <!--끝-->
+            </div>
+            </body>
+        </html>

@@ -1,0 +1,71 @@
+from django.conf.urls import patterns, include, url
+from django.conf.urls.defaults import *
+
+from study.views import *
+from django.contrib import admin
+
+admin.autodiscover()
+# Uncomment the next two lines to enable the admin:
+# from django.contrib import admin
+# admin.autodiscover()
+
+urlpatterns = patterns('',
+#    url(r'^front/$',MainFrame),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':'media'}),
+    #url(r'^post/$',Post_list),
+    #url(r'^post/(?P<post_id>\d+)/$', Post_detail),
+    #url(r'^post/(?P<post_id>\d+)/comment/$', Add_comment),
+    url(r'^main/$',mainframe),
+    url(r'^main/opengl/$',openglpagelist),
+    url(r'^main/opengl/(?P<page>\d+)/$',openglpagelist),
+    url(r'^blog/add/opengl/post/$',openglpost),
+    url(r'^map/$',map),
+    url(r'^blog/exmap/$',exmap),
+    url(r'^mobilemap/$',mobile_json_marketinfo),
+    url(r'^mobile/culturemap/$',mobile_xmlmap),
+    url(r'^mobile/inputdb/$',input_db),
+    url(r'^mobile/searchloc/$',search_loc),
+    url(r'^mobile/requestloc/$',mobile_loc),
+    
+    
+    
+#    utl(r"^mobilexmlmap/$",mobile_xmlmap),
+    
+  #  url(r'^main/opengl/entry/(?P<entry_id>\d+)/$',openglread),
+    #url(r'^blog/$',Study),
+    #url(r'^blog/page/(?P<page>\d+)/$', Study),
+    #url(r'^blog/entry/(?P<entry_id>\d+)/$', read),
+    #url(r'^blog/page/(?P<page>d+)/$', ''),
+    # Examples:
+    # url(r'^$', 'StartHomepage.views.home', name='home'),
+    # url(r'^StartHomepage/', include('StartHomepage.foo.urls')),
+
+    # Uncomment the admin/doc line below to enable admin documentation:
+    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Uncomment the next line to enable the admin:
+    url(r'^admin/', include(admin.site.urls)),
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

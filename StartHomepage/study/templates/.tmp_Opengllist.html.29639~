@@ -1,0 +1,197 @@
+{%extends "OpenglPage.html"%}
+
+{%block opengl_initfun()%}
+	indexMake(1,pagenum);
+{%endblock%}
+
+{%block opengl_function%}
+    	var {%block pagenum%}pagenum={{pagenum}}{%endblock%};
+		var limitidx = 4;
+		var input_check;
+		function indexMake(s_i,e_i){
+			var s_text = '<ul class="pagination"><li class="arrow"><a href="" onclick="indexMake()">&laquo;</a></li>';					                
+			var m_text = "";
+			var e_text = '</li><li class="arrow"><a href="" onclick="indexMake()">&raquo;</a></li></ul>';
+			showInContentWindow(text,'listView');
+			for(x=s_i;x<e_i+1;x++)
+			{
+				m_text+='<li><a href="http://127.0.0.1:8001/main/opengl/'+x+'/" onclick="indexMake()">'+x+'</a>';
+			};
+			var text = s_text+m_text+e_text;
+			showInContentWindow(text,'listView');
+		};		
+		function showdetail(title,text,comment){
+			var detail ='<br><br>'
+						+'</br>'
+						+'<div class="panel" style="height:50px; font-size:20px;">'
+                   			+title
+                		+'</div>'
+                			+'<br>'
+                			+'</br>'
+                		+'<div class="panel" style="height:500px;text-align:left;">'
+                    		+text
+                		+'</div>'
+                			+'<br>'
+                			+'</br>'
+                		+'<div align="right">'
+                    		+'<button class="small button">'
+                        		+'comment'
+                    		+'</button>'
+                		+'</div>'
+                		+'<br>'
+                		+'</br>'
+                		+'<div class="panel" style="height:auto;">'
+                    		+comment
+                		+'</div>'
+			showInContentWindow(detail,'readView');			
+		};
+		function nameError(){
+			var arge0 = $("#" + 'name_field').val();
+            //var arge0 = document.getElementById("name_field").value;
+            if (arge0 == "") {
+                showInContentWindow('<div id="name_result" class="alert-box alert">empty or incorrect</div>', 'name_result');
+                showInContentWindow('<button class="small alert button" onclick="nameError()">error</button>', 'name_error_button');
+            }
+            else {
+                showInContentWindow('<div id="name_result" class="alert-box success">' + arge0 + '</div>', 'name_result');
+                showInContentWindow('<button class="small success button" onclick="nameError()">success</button>', 'name_error_button');
+            };
+		};
+        
+        function addressError(){
+        	var arge0 = $("#" + 'content_field').val();
+            //var arge0 = document.getElementById("content_field").value;
+            if (arge0 == "") {
+                showInContentWindow('<div id="address_result" class="alert-box alert">empty or incorrect</div>', 'address_result');
+                showInContentWindow('<button class="small alert button" onclick="addressError()">error</button>', 'address_error_button');
+            }
+            else {
+                showInContentWindow('<div id="address_result" class="alert-box success">' + 'Thanks' + '</div>', 'address_result');
+                showInContentWindow('<button class="small success button" onclick="addressError()">success</button>', 'address_error_button');
+            };
+		};
+        
+        function phoneError(){
+            var arge0 = $("#" + 'phone1').val();
+            if (arge0 == "") {
+                showInContentWindow('<div id="phone_result" class="alert-box alert">empty or incorrect</div>', 'phone_result');
+                showInContentWindow('<button class="small alert button" onclick="phoneError()">error</button>', 'phone_error_button');
+            }
+            else {
+                showInContentWindow('<div id="phone_result" class="alert-box success">' + arge0+" - " + arge1+" - " + arge2 + '</div>', 'phone_result');
+                showInContentWindow('<button class="small success button" onclick="phoneError()">success</button>', 'phone_error_button');
+            };
+		};
+		function m_write(){
+			var text = ''
+			+'<div class="row display" style="height:50;text-align:left">'
+            +'<div class="one columns">'
+                
+            +'</div>'
+            +'<div class="ten columns">'
+			+'<form method="post" action="/blog/add/post/">'
+                    +'<legend style="text-align:center;">'
+					+'</legend>'
+                    +'<p>'
+                    +'</p>'
+                    +'<form>'
+                    +'<div class="row">'
+                        +'<div class="six columns" >'
+                            +'<label style="size:30px;color:#ffffff">'
+                                +'[ TITLE ]'
+                            +'</label><br></br>'
+                            +'<input id="name_field" name="name_field" type="text" placeholder="Standard Input"></input>'
+                            +'<p>'
+                                +'<div class="row">'
+                                    +'<div id="name_error_button" class="four columns">'
+                                    +'</div>'
+                                    +'<div id="name_error" class="eight columns">'
+                                        +'<div id="name_result">'
+                                        +'</div>'
+                                    +'</div>'
+                                +'</div>'
+                            +'</p>'
+                        +'</div>'
+                        +'<div class="four columns">'
+					+'<label style="size:30px;color:#ffffff">'
+                        +'[ CHECK ]'
+                    +'</label>'
+                    +'<div class="row">'
+						+'<div class="four columns">'
+						+'</div>'
+						+'<div class="eight columns">'
+                       	+'<p><label style="color:#ffffff">CATEGORY</label>'
+						+'<select name="category_field" id="category_field">'
+						+'{% for category in categories %}</p>'
+						+'<option value="{{category.id}}">{{category.Title}}</option>'
+						+'<p>{% endfor %}'
+						+'</select></p>'
+						+'</div>'
+					+'</div>'
+                        +'</div>'
+                    +'</div>'
+                    +'<label style="color:#ffffff">'
+                        +'[ CONTENTS ]'
+                    +'</label>'
+                    +'<textarea id="content_field" name="content_field" type="text" class="twelve" placeholder="Detail" style="height:400px"></textarea>'
+                    +'<p>'
+                        +'<div class="row">'
+                            +'<div id="address_error_button" class="four columns">'
+                            +'</div>'
+                            +'<div id="address_error" class="eight columns">'
+                                +'<div id="address_result">'
+                                +'</div>'
+                            +'</div>'
+                        +'</div>'
+                    +'</p>'
+					+'<button class="small button" id="submit_bt" type="submit">Finish</button>'
+                +'</form>'
+                +'<p>'
+                +'</p>'
+            +'</div>'
+			+'</form>'
+            +'<div class="one columns">'
+               
+            +'</div>'
+        +'</div>'
+        showInContentWindow(text, 'readView');
+		showInContentWindow('<button id="name_enter" type="submit" class="small button" onclick="nameError()">enter</button>', 'name_error_button');
+		showInContentWindow('<button id="address_enter" type="submit" class="small button" onclick="addressError()">enter</button>', 'address_error_button');
+		showInContentWindow('<button id="phone_enter" type="submit" class="small button" onclick="phoneError()">enter</button>', 'phone_error_button');
+		};
+{%endblock%}
+
+{%block opengl_html%}
+        <div style="margin:20px;size:auto;">
+            <div class="twelve columns" style="height:auto;">
+				<div class="ten columns" style="text-align:left">
+				</div>
+				<div class="two columns" style="text-align:right;">
+					<button id="name_enter" type="submit" class="small button" onclick="m_write()">NEW</button>					
+				</div>
+                <div class=" eight columns " style="margin:bottom:10px ;text-align:center;color:#ffffff">
+                    Title
+                </div>
+                <div class="four columns " style="text-align:center;color:#ffffff">
+                    Time
+                </div>
+                <hr>{%for item in entries%}
+                <div class="eight columns " style="height:10px;text-align:left">
+                    <a href="#" onclick="showdetail('{{item.Title}}','{{item.Content}}','{{item.Comment}}')">{{item.Title}}</a>
+                </div>
+                <div class="four columns" style="height:10px;color:#ffffff">
+                    {{item.Created}}
+                    {{item.Category}}
+                </div>
+				</br>
+                <hr>{%endfor%}
+                <div id="listView">
+                </div>
+                <hr>
+                <div id="readView" style="text-align:center;">
+                </div>
+            <div>
+            </div>
+        </div>
+	</div>
+{%endblock%}

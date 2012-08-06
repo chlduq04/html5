@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;StartHomepage/study/management/commands/m_set.py&apos; to &apos;json_parsing_in_DB.py&apos;" description="Rename resource &apos;m_set.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="study/management/commands/m_set.py" name="json_parsing_in_DB.py" stamp="1343103478034" updateReferences="true"/>
+</session>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>New BluePrint</title>
+        /<!--<link rel="stylesheet" href="blueprint/blueprint/screen.css" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="blueprint/blueprint/print.css" type="text/css" media="print" />
+        <link rel="stylesheet" href="blueprint/blueprint/ie.css" type="text/css" media="screen, projection" />
+        -->
+        <link rel="stylesheet" href="foundation3/stylesheets/app.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/foundation.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/ie.css" type="text/css" />
+    
+	    <style type="text/css"> 
+            /*
+             #header {
+             };
+             */
+        </style>
+		
+        <script type="text/javascript">
+        </script>
+		
+    </head>
+	
+    <body align="center">
+        <div class="row">
+            <div class="eight columns">
+                main content..
+            </div>
+            <div class="four columns">
+                sidervar..
+            </div>
+        </div>
+    </body>
+	
+</html>

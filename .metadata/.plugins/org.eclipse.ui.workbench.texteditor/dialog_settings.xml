@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="262" key="DIALOG_WIDTH"/>
+		<item value="180" key="DIALOG_Y_ORIGIN"/>
+		<item value="961" key="DIALOG_X_ORIGIN"/>
+		<item value="385" key="DIALOG_HEIGHT"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="button" key="selection"/>
+		<list key="findhistory">
+			<item value="button"/>
+			<item value="             function addMarker(location){"/>
+			<item value="INSTALLED"/>
+			<item value="DATABASE"/>
+			<item value="database"/>
+			<item value="name_field"/>
+			<item value="&lt;h1&gt;{{page_title}}&lt;/h1&gt;"/>
+			<item value="&gt;"/>
+		</list>
+		<list key="replacehistory">
+			<item value="&gt;&apos;"/>
+			<item value="+&apos;&lt;"/>
+			<item value="categorie"/>
+			<item value="opengl_post"/>
+			<item value="h"/>
+			<item value="c"/>
+			<item value="p"/>
+			<item value="o"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="275" key="DIALOG_Y_ORIGIN"/>
+		<item value="368" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

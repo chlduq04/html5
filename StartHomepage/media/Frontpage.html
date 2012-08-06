@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="foundation3/stylesheets/app.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/foundation.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/ie.css" type="text/css" />
+        </script>
+        <script>
+            
+            function initialize(){
+                /*
+                 var description = '<div class="panel"><h5>This is a regular panel.</h5><p>It has an easy to override visual style, and is appropriately subdued.</p></div><br><br>' +
+                 '<div class="panel"><h5>This is a regular panel.</h5><p>It has an easy to override visual style, and is appropriately subdued.</p></div><br><br>';
+                 showInContentWindow(description, 'main_field');       
+                 */
+            };
+   
+            function showInContentWindow(text, id){
+                $("#" + id).html(text);
+            };
+        </script>
+    </head>
+    <body onload="initialize()">
+        <div class="row display" style="margin:10px">
+            <div id="left_frame" class="two columns" style="height:100px">
+                <section id="sidebar" role="complementary">
+                    <dl class="tabs vertical hide-on-phones">
+                        <dd class="active">
+                            <a href="">Info</a>
+                        </dd>
+                    </dl>
+                </section>
+            </div>
+            <div id="main_field" class="ten columns">
+            </div>
+            <div class="two columns">
+            </div>
+        </div>
+        <script src="./foundation3/javascripts/jquery-1.7.2.js">
+        </script>
+    </body>
+</html>

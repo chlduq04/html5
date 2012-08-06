@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BookFrame</title>
+        <link rel="stylesheet" href="foundation3/stylesheets/app.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/foundation.css" type="text/css"/>
+        <link rel="stylesheet" href="foundation3/stylesheets/ie.css" type="text/css" />
+        <script>
+            function initialize(){
+            
+            };
+            function showInContentWindow(text, id){
+                $("#" + id).html(text);
+            };
+        </script>
+    </head>
+    <body onload="initialize()">
+        <div class="row"style="margin:10px">
+            <div id="left_frame" class="three columns">
+                <section id="sidebar" role="complementary">
+                <dl class="tabs vertical hide-on-phones">
+                    <dd>
+                        <a href="file://C:/Users/choi/HTML5_eclipse/HTMLtest1/Homepage/DirectX&OpenGl.html">Funny</a>
+                    </dd>
+                    <dd>
+                        <a href="file://C:/Users/choi/HTML5_eclipse/HTMLtest1/Homepage/HighSchoolFrame.html">serious</a>
+                    </dd>
+                </dl>
+            </div>
+            <div id="right_frame" class="nine columns">
+            </div>
+            </section>
+        </div>
+        </div>
+    </body>
+</html>

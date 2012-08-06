@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script language="JavaScript">
+
+var xmlDOM = new ActiveXObject("Microsoft.XMLDOM");
+xmlDOM.async = false;
+//xml URL 로드
+var xml_url = "http://openAPI.seoul.go.kr:8088/xml/sample/공원명별 공원 프로그램 정보조회/1/5/창포원/"; // xml 페이지
+
+xmlDOM.load(xml_url); //xml로드
+
+// 사용
+var data = xmlDOM.getElementsByTagName("P_IDX");
+alert(data.length);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

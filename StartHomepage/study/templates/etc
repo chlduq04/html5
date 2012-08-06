@@ -1,0 +1,45 @@
+view.py
+
+def Study(request, page=1):
+    page = int(page)
+    per_page = 5
+    start_pos = (page - 1) * 5
+    end_pos = start_pos + 5
+    entries = opengl_post.objects.all().order_by('-Created')[start_pos:end_pos]
+    page_num = opengl_post.objects.count() / per_page + 1
+        
+#    Page = (' Page[%s]' % page_title)
+#    Content = ""
+#    for item in entries:
+#            Content += (' Title[%s]' % item.Title.encode('utf-8')) + (' Content[%s]' % item.Content.encode('utf-8'))
+#    
+    tpl = loader.get_template('textList.html')
+    ctx = Context({
+                   'entries':entries,
+                   'pagenum':page_num,
+                   })
+    return HttpResponse(tpl.render(ctx))
+
+def read(request, entry_id=None):
+    current_entry = opengl_post.objects.get(id=int(entry_id))
+    tpl = loader.get_template('Opengldetail.html')
+    title = current_entry.Title.encode('utf-8');
+    content = current_entry.Content.encode('utf-8');
+    comment = current_entry.Comment;
+    ctx = Context({
+                   'title':title,
+                   'content':content,
+                   'comment':comment
+                   })
+    #return HttpResponse('안녕, 여러분. [%d]번 글의 제목은 [%s]이고 [%s]라는 글이야.' % (current_entry.id, current_entry.Title.encode('utf-8'), current_entry.Content.encode('utf-8')))
+    return HttpResponse(tpl.render(ctx))    
+
+def openglwrite(request):
+    page_title='글쓰기'
+    categories = categorie.objects.all()
+    tpl = loader.get_template('exWrite.html')
+    ctx = Context({
+                   'page_title':page_title,
+                   'categories':categories
+                   })
+    return HttpResponse(tpl.render(ctx))

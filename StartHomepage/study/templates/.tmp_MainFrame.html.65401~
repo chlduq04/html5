@@ -1,0 +1,129 @@
+{%extends "Base.html"%}
+
+
+{%block Basetitle%}
+{%endblock%}
+
+{%block Basefunction%}
+        function info(){
+			var text='<div class="row display" style="margin:10px">'
+        				+'<div id="left_frame" class="two columns" style="height:100px">'
+               				+'<section id="sidebar" role="complementary">'
+                    			+'<dl class="tabs vertical hide-on-phones">'
+                        			+'<dd class="active">'
+                            			+'<a href="">Info</a>'
+                       				+'</dd>'
+                    			+'</dl>'
+                			+'</section>'
+            			+'</div>'
+            			+'<div id="main_field" class="ten columns">'
+            			+'</div>'
+            			+'<div class="two columns">'
+            			+'</div>'
+        			+'</div>';
+			showInContentWindow(text,'info_field');
+        };
+        function mProgramming(){
+			var text='<div class="row display" style="margin:10px">'
+            				+'<div id="left_frame" class="two columns">'
+                				+'<section id="sidebar" role="complementary">'
+                    				+'<dl class="tabs vertical hide-on-phones">'
+                        				+'<dd><a href="http://127.0.0.1:8001/main/opengl/">OpenGl</a></dd>'
+                        				+'<dd><a href="">HTML</a></dd>'
+                        				+'<dd><a href="">DirectX</a></dd>'
+                        				+'<dd><a href="">Django</a></dd>'
+                    				+'</dl>'
+                				+'</section>'
+            				+'</div>'
+							+'<div id="right_frame" class="ten columns">'
+							+'sdfasfasfasdffasfasdfasf'
+            				+'</div>'
+        			+'</div>'
+			showInContentWindow(text,'info_field');		
+		};	
+        function showInContentWindow(text, id){
+            $("#"+id).html(text);
+        };
+
+        function initialize(){
+			{%block mainF_initfun()%}
+			{%endblock%}		    
+        };
+				
+		{%block mainF_function%}
+		{%endblock%}		
+
+{%endblock%}
+{%block Basehtml%}
+    <body onload="initialize()">
+        <div class="row" align="center">
+            <div class="row" style="height:100px;font-family;color:#ffffff;margin:40px;">
+                <h1>Homepage Title</h1>
+            </div>
+            <div class="row" style="height:50px">
+                <ul class="nav-bar">
+                    <li class="active">
+                        <a onclick="info()">Info</a>
+                    </li>
+                    <li class="has-flyout two columns">
+                        <a href="#" onclick="">Study</a>
+                        <a href="#" class="flyout-toggle"><span></span></a>
+                        <ul class="flyout">
+                            <li>
+                                <a href="#" onclick="mProgramming()">Programming</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="mBook()">Book</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="mStudyNew()">New</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-flyout two columns">
+                        <a href="#">Board</a>
+                        <a href="#" class="flyout-toggle"><span></span></a>
+                        <ul class="flyout">
+                            <li>
+                                <a href="#">MovieBoard</a>
+                            </li>
+                            <li>
+                                <a href="#">Visit</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-flyout two columns">
+                        <a href="#">Site</a>
+                        <a href="#" class="flyout-toggle"><span></span></a>
+                        <ul class="flyout">
+                            <li>
+                                <a href="#">Thanksful</a>
+                            </li>
+                            <li>
+                                <a href="#">Favorite</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-flyout two columns">
+                        <a href="#">Help</a>
+                        <a href="#" class="flyout-toggle"><span></span></a>
+                        <ul class="flyout">
+                            <li>
+                                <a href="#">Q&A</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="info_field" class="row" style="height:700px;width:auto"> 
+				{%block mainF_html%}
+				{%endblock%}         		
+                </div>
+				<hr>
+                <div class="row" style="height:50px">
+                </div>
+            </div>
+            <div style="height:200px">
+            </div>
+        </div>
+		</body>
+{%endblock%}
